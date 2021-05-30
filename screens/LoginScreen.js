@@ -50,7 +50,8 @@ export default class LoginScreen extends Component{
   userLogin = (emailId, password)=>{
      firebase.auth().signInWithEmailAndPassword(emailId, password)
      .then(()=>{
-       return Alert.alert("Successfully Login")
+      // return Alert.alert("Successfully Login")
+       this.props.navigation.navigate('DonateItems')
      })
      .catch((error)=> {
        var errorCode = error.code;
